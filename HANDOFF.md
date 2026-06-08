@@ -1,15 +1,15 @@
 # Handoff Prompt — 给下一个 AI 继续开发
 
-**工作目录**: `/home/fearless/github/claude-code-rust/`
-**GitHub**: https://github.com/Fearless743/claude-code-rust
-**目标**: 将 Anthropic Claude Code CLI 从 TypeScript/Bun 重写为 Rust
+工作目录就是 `/home/fearless/github/claude-code-rust/`，无需 cd。
+
+GitHub: https://github.com/Fearless743/claude-code-rust
+目标: 将 Anthropic Claude Code CLI 从 TypeScript/Bun 重写为 Rust
 
 ---
 
 ## 环境验证（第一步）
 
 ```bash
-cd /home/fearless/github/claude-code-rust
 cargo check          # 类型检查，必须通过
 cargo test           # 运行 12 个测试，必须全部通过
 cargo fmt --check    # 格式检查
@@ -37,12 +37,12 @@ git log --oneline -5 # 查看历史
 3. **更多单元测试** — 每个 adapter、每个 MCP 方法、每个 tool 的边界情况
 4. **Bedrock/Vertex/Foundry adapter** — 目前是 stub，需要实现
 5. **性能优化** — 减少启动时间、优化 token 计算
-6. **Clippy lint 清理** — `cargo clippy` 修复 warnings
+6. **Clippy lint 清理** — 修复 warnings
 7. **CI pipeline** — `.github/workflows/ci.yml` 已存在但需要验证
 
 ---
 
-## 关键命令
+## 常用命令
 
 ```bash
 cargo run                          # 交互 REPL
@@ -55,7 +55,7 @@ CLAUDE_CODE_USE_GEMINI=1 GEMINI_API_KEY=... cargo run
 
 ---
 
-## 文件映射（找代码用）
+## 文件映射
 
 | TS 源文件 | Rust 源文件 |
 |-----------|------------|
@@ -70,8 +70,6 @@ CLAUDE_CODE_USE_GEMINI=1 GEMINI_API_KEY=... cargo run
 ---
 
 ## Git 提交规范
-
-使用 Conventional Commits，每次修改后提交：
 
 ```bash
 git add -A && git commit -m "feat: description" && git push origin main
